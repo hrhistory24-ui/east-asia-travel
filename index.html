@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>동아시아 역사 기행</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <p class="hero-label">동아시아 여행 계획 세우기 프로젝트</p>
+      <h1>동아시아 역사 기행</h1>
+      <p class="hero-text">
+        <span class="hero-text-line hero-text-line-first">
+          고3 2학기, 지금까지 진학만을 위해 달려온 여러분과 함께 떠나는 동아시아 여행 계획.
+        </span>
+        <span class="hero-text-line">
+          도시를 고르고, 문화재를 살펴보고, 나만의 역사 여행 코스를 만들어봅니다.
+        </span>
+      </p>
+      <button class="primary-button" data-scroll-target="#intro">
+        여행 계획 시작하기
+      </button>
+
+      <p class="hero-bgm-guide">
+        오른쪽 아래 ♪ 버튼으로 여행 BGM을 켜고 끌 수 있어요.
+      </p>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-section" id="intro">
+      <div class="section-heading">
+        <p class="section-label">Travel Partner</p>
+        <h2>여행 계획 파트너 인사</h2>
+      </div>
+
+      <div class="intro-box">
+        <p>
+          안녕하세요. 이곳은 동아시아 역사기행 여행 계획 안내소입니다.
+          여러분은 원하는 동아시아 도시를 고르고, 그 도시의 문화재를 살펴보며
+          자신만의 역사 여행 코스를 만들어가게 됩니다.
+        </p>
+        <p>
+          아래 지도로 이동해 마음에 드는 도시를 선택해보세요.
+          도시를 클릭하면 해당 도시의 약도와 문화재 탐방 버튼이 나타납니다.
+        </p>
+        <button class="secondary-button" data-scroll-target="#map-section">
+          동아시아 지도로 이동
+        </button>
+      </div>
+    </section>
+
+    <section class="section step-section">
+      <div class="section-heading">
+        <p class="section-label">How To Travel</p>
+        <h2>여행 방식 3단계</h2>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>도시를 고른다</h3>
+          <p>동아시아 지도에서 탐방하고 싶은 도시를 선택합니다.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <h3>약도를 살펴본다</h3>
+          <p>선택한 도시의 주요 장소와 이동 동선을 확인합니다.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>문화재 카드를 연다</h3>
+          <p>문화재 버튼을 눌러 역사적 의미를 그림카드로 살펴봅니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section map-section" id="map-section">
+      <div class="section-heading">
+        <p class="section-label">East Asia Map</p>
+        <h2>동아시아 도시 탐방</h2>
+        <p class="section-description">어디로 여행 갈까요? 도시를 클릭해보세요.</p>
+      </div>
+
+    <div class="map-layout">
+    <div class="map-box">
+      <button class="city-button seoul" data-city="seoul" data-label="서울" aria-label="서울"></button>
+      <button class="city-button gyeongju" data-city="gyeongju" data-label="경주" aria-label="경주"></button>
+      <button class="city-button beijing" data-city="beijing" data-label="베이징" aria-label="베이징"></button>
+      <button class="city-button shanghai" data-city="shanghai" data-label="상하이" aria-label="상하이"></button>
+      <button class="city-button xian" data-city="xian" data-label="시안" aria-label="시안"></button>
+      <button class="city-button tokyo" data-city="tokyo" data-label="도쿄" aria-label="도쿄"></button>
+      <button class="city-button kyoto" data-city="kyoto" data-label="교토" aria-label="교토"></button>
+      <button class="city-button nagasaki" data-city="nagasaki" data-label="나가사키" aria-label="나가사키"></button>
+      <button class="city-button taipei" data-city="taipei" data-label="타이베이" aria-label="타이베이"></button>
+    </div>
+    </div>
+
+        <aside class="map-guide">
+          <h3>도시 선택 안내</h3>
+          <p>
+            지도 위 도시 버튼을 누르면 아래에 도시 약도와 문화재 탐방 버튼이 나타납니다.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section city-section" id="city-section">
+    <div class="section-heading city-heading">
+        <p class="section-label">Selected City</p>
+
+        <div class="city-title-stack">
+        <h2 id="selected-city-title">아직 선택한 도시가 없습니다</h2>
+        <div class="city-card-cta">
+          <span class="city-card-cta-label">도시 소개 그림카드를 먼저 읽어보세요</span>
+          <button class="card-open-button city-card-button" data-card="city">
+            🧭 도시 소개 그림카드 열기
+          </button>
+        </div>
+        </div>
+    </div>
+
+    <div class="city-detail-layout">
+        <div class="city-map-placeholder">
+        <p id="city-map-text">도시 약도 영역</p>
+
+        <div class="heritage-list map-heritage-list" id="heritage-list">
+            <p class="empty-message">도시를 선택하면 약도 위에 문화재 버튼이 표시됩니다.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="section-heading">
+        <p class="section-label">FAQ</p>
+        <h2>동아시아 역사 기행 FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Q. 고3 2학기라 굳이 들을 필요 없는데요?
+          </button>
+          <div class="faq-answer">
+            <p>
+              그니깐 겸사겸사 여행 계획이나 같이 짜죠 우리.
+              무겁게 외우는 수업보다, 도시와 문화재를 따라가며 동아시아를 가볍게 탐험해봅니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q. 역사 지식이 많아야 하나요?
+          </button>
+          <div class="faq-answer">
+            <p>
+              아니요. 도시를 고르고, 문화재를 살펴보며 자연스럽게 알아가는 방식으로 진행됩니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q. 결과물은 어떤 형태로 만드나요?
+          </button>
+          <div class="faq-answer">
+            <p>
+              나만의 동아시아 여행 코스, 도시 탐방 기록, 문화재 소개 자료 등으로 정리할 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ai-section">
+      <div class="section-heading">
+        <p class="section-label">AI Travel Partner</p>
+        <h2>작전 시뮬레이터: 인공지능 대화창</h2>
+      </div>
+
+      <div class="ai-box">
+        <p>
+          여행 도시를 고르기 어렵다면 AI 여행 계획 파트너에게 물어보세요.
+        </p>
+        <button class="primary-button" id="ai-button">
+          AI에게 여행 계획 물어보기
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="popup" id="popup" aria-hidden="true">
+    <div class="popup-content">
+      <button class="popup-close" id="popup-close">닫기</button>
+      <h2 id="popup-title">팝업 제목</h2>
+
+      <p id="popup-zoom-guide" class="popup-zoom-guide" hidden>
+        PC: 마우스 휠로 확대·축소, 드래그로 이동 ｜ 태블릿: 두 손가락으로 확대·축소
+      </p>
+
+      <div id="popup-image-stage" class="popup-image-stage" hidden>
+        <img id="popup-image" class="popup-image" src="" alt="" />
+      </div>
+      <p id="popup-text">팝업 내용이 이곳에 표시됩니다.</p>
+    </div>
+  </div>
+
+  <div class="bgm-player" id="bgm-player">
+    <audio id="bgm-audio" preload="auto"></audio>
+
+    <button id="bgm-button" class="bgm-button" type="button" aria-pressed="false">
+      ♪ 여행 BGM 켜기
+    </button>
+
+    <button id="bgm-next-button" class="bgm-next-button" type="button">
+      ⏭ 다음 곡
+    </button>
+
+    <p id="bgm-title" class="bgm-title">BGM 대기 중</p>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1091 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #243447;
+  --muted: #5f7182;
+  --blue: #1b8bd1;
+  --blue-dark: #1f4f68;
+  --blue-soft: #edf8ff;
+  --line-blue: #9fd8f5;
+  --bg-sky: #f2fbff;
+  --panel-white: #ffffff;
+  --marker: #ff6f61;
+  --marker-soft: rgba(255, 111, 97, 0.22);
+  --yellow-bg: #fff8df;
+  --yellow-line: #e6c86a;
+  --yellow-text: #9b8132;
+  --shadow-blue: 0 12px 32px rgba(61, 127, 166, 0.14);
+  --shadow-map: 0 16px 38px rgba(61, 127, 166, 0.12);
+  --shadow-yellow: 0 16px 38px rgba(145, 111, 26, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg-sky);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(27, 139, 209, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.82) 0 70px, transparent 72px),
+    radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.7) 0 92px, transparent 94px),
+    linear-gradient(180deg, #bdefff 0%, var(--bg-sky) 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.hero-label,
+.section-label {
+  margin: 0 0 12px;
+  font-weight: 800;
+  color: #2488b8;
+}
+
+.hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(42px, 6vw, 56px);
+  color: var(--blue-dark);
+}
+
+.hero-text {
+  margin: 0 auto 32px;
+  max-width: 680px;
+  font-size: 20px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.primary-button,
+.secondary-button,
+.card-open-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 800;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.primary-button {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 10px 22px rgba(27, 139, 209, 0.22);
+}
+
+.primary-button:hover {
+  background: #1479ba;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(27, 139, 209, 0.28);
+}
+
+.secondary-button,
+.card-open-button {
+  background: white;
+  color: #1b6c9e;
+  border: 1px solid var(--line-blue);
+  box-shadow: 0 8px 18px rgba(61, 127, 166, 0.1);
+}
+
+.secondary-button:hover,
+.card-open-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(61, 127, 166, 0.16);
+}
+
+.intro-box .secondary-button {
+  display: block;
+  width: fit-content;
+  margin: 22px auto 0;
+}
+
+/* =========================
+   Common Sections
+========================= */
+
+.section {
+  padding: 80px 24px;
+}
+
+.section-heading {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4vw, 34px);
+  color: var(--text);
+}
+
+.section-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* =========================
+   Intro / AI Box
+========================= */
+
+.intro-box,
+.ai-box {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #cde8f6;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-blue);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.intro-box p:first-child::before {
+  content: "여행 계획 안내소";
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #e6f7ff;
+  color: #1b6c9e;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================
+   3 Step Cards
+========================= */
+
+.step-section {
+  background: linear-gradient(180deg, var(--bg-sky) 0%, #ffffff 100%);
+}
+
+.step-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  padding: 28px;
+  border: 1px solid #d8edf6;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 12px 32px rgba(61, 127, 166, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(61, 127, 166, 0.16);
+}
+
+.step-number {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* =========================
+   East Asia Map
+========================= */
+
+.map-section {
+  background: #ffffff;
+}
+
+.map-layout {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.map-guide {
+  display: none;
+}
+
+.map-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  background:
+    linear-gradient(rgba(242, 251, 255, 0.08), rgba(242, 251, 255, 0.08)),
+    url("images/east-asia-map.png") center / cover no-repeat;
+  border: 2px solid #8ccdeb;
+  overflow: hidden;
+  box-shadow: var(--shadow-map);
+}
+
+.map-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(242, 251, 255, 0.08);
+  pointer-events: none;
+}
+
+/* 도시 마커 */
+.city-button {
+  position: absolute;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  background: var(--marker);
+  font-size: 0;
+  box-shadow: 0 8px 20px rgba(36, 87, 117, 0.22);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.city-button::before {
+  display: none;
+}
+
+.city-button::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1b6c9e;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(36, 87, 117, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(4px);
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.city-button:hover,
+.city-button:focus-visible {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.city-button:hover::after,
+.city-button:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.city-button.active {
+  background: var(--marker);
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 6px var(--marker-soft),
+    0 10px 24px rgba(36, 87, 117, 0.25);
+}
+
+/* 동아시아 지도 위 도시 위치 */
+.seoul { left: 57%; top: 51%; }
+.gyeongju { left: 62%; top: 55%; }
+
+.beijing { left: 41%; top: 41%; }
+.shanghai { left: 48%; top: 73%; }
+.xian { left: 25%; top: 62%; }
+
+.tokyo { left: 79%; top: 58%; }
+.kyoto { left: 73%; top: 60%; }
+.nagasaki { left: 63%; top: 69%; }
+
+.taipei { left: 48%; top: 95%; }
+
+/* =========================
+   Selected City Map
+========================= */
+
+.city-section {
+  padding-top: 80px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: #f8fcff;
+}
+
+.city-heading {
+  margin-bottom: 42px;
+}
+
+.city-title-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.city-title-stack h2 {
+  margin: 0;
+}
+
+.city-card-button {
+  margin-top: 2px;
+  padding: 10px 18px;
+  font-size: 15px;
+}
+
+.city-detail-layout {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.city-map-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 34px;
+  overflow: hidden;
+  border: 2px dashed var(--yellow-line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 24% 32%, rgba(255, 255, 255, 0.55) 0 70px, transparent 72px),
+    radial-gradient(circle at 72% 54%, rgba(255, 255, 255, 0.45) 0 90px, transparent 92px),
+    linear-gradient(135deg, #fff9de 0%, #fff4c7 100%);
+  box-shadow: var(--shadow-yellow);
+}
+
+.city-map-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 34px;
+  border: 2px solid rgba(230, 200, 106, 0.42);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.city-map-placeholder::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  top: 42%;
+  width: 64%;
+  height: 28%;
+  border-top: 3px dashed rgba(155, 129, 50, 0.22);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+#city-map-text {
+  position: absolute;
+  left: 48px;
+  top: 42px;
+  z-index: 2;
+  margin: 0;
+  color: var(--yellow-text);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* 문화재 마커 */
+.map-heritage-list {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  margin: 0;
+  display: block;
+}
+
+.map-heritage-list .empty-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  color: #7b8a99;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+}
+
+.heritage-button {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 22px;
+  height: 22px;
+  min-width: 0;
+  padding: 0;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  background: #ff8a65;
+  font-size: 0;
+  box-shadow: 0 8px 20px rgba(97, 72, 18, 0.18);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.heritage-button::before {
+  display: none;
+}
+
+.heritage-button::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #9b6b1f;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(97, 72, 18, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(4px);
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.heritage-button:hover,
+.heritage-button:focus-visible {
+  transform: translate(-50%, -58%) scale(1.08);
+  box-shadow: 0 12px 26px rgba(97, 72, 18, 0.24);
+}
+
+.heritage-button:hover::after,
+.heritage-button:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section {
+  background: #ffffff;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid #d8edf6;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 8px 22px rgba(61, 127, 166, 0.1);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  border: 0;
+  padding: 20px;
+  background: white;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.faq-question::after {
+  content: "+";
+  float: right;
+  color: var(--blue);
+  font-size: 22px;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 20px 20px;
+  line-height: 1.7;
+  color: var(--muted);
+  word-break: keep-all;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* =========================
+   AI Section
+========================= */
+
+.ai-section {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-sky) 100%);
+}
+
+/* =========================
+   Popup
+========================= */
+
+.popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(20, 45, 62, 0.55);
+  z-index: 100;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup-content {
+  width: min(560px, 100%);
+  padding: 32px;
+  border: 1px solid #cde8f6;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.popup-content h2 {
+  margin-top: 8px;
+  color: var(--text);
+}
+
+.popup-content p {
+  line-height: 1.8;
+  color: var(--muted);
+  word-break: keep-all;
+}
+
+.popup-close {
+  float: right;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--blue-soft);
+  color: #1b6c9e;
+  font-weight: 800;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 68px 18px;
+  }
+
+  .hero {
+    padding: 72px 18px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .intro-box,
+  .ai-box,
+  .step-card,
+  .popup-content {
+    padding: 24px;
+  }
+
+  .map-layout,
+  .city-detail-layout {
+    max-width: calc(100vw - 32px);
+  }
+
+  .map-box,
+  .city-map-placeholder {
+    aspect-ratio: 4 / 3;
+  }
+
+  .city-map-placeholder {
+    padding: 28px;
+  }
+
+  .city-map-placeholder::before {
+    inset: 28px;
+  }
+
+  #city-map-text {
+    left: 36px;
+    top: 32px;
+    font-size: 16px;
+  }
+
+  .city-button,
+  .heritage-button {
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+
+  .city-button::after,
+  .heritage-button::after {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .map-box,
+  .city-map-placeholder {
+    aspect-ratio: 1 / 1;
+  }
+
+  .city-card-button {
+    font-size: 14px;
+  }
+}
+
+.popup-content {
+  width: min(900px, 94vw);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.popup-image {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.popup-content.image-mode {
+  width: min(1100px, 96vw);
+  height: min(92vh, 920px);
+  overflow: hidden;
+}
+
+.popup-image-stage {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 64px);
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f2fbff;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.popup-image-stage:active {
+  cursor: grabbing;
+}
+
+.popup-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  border-radius: 18px;
+  transform-origin: center center;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .popup-content.image-mode {
+    width: 96vw;
+    height: 90vh;
+  }
+
+  .popup-image-stage {
+    min-height: 480px;
+    height: calc(100% - 58px);
+  }
+}
+
+.city-map-placeholder.has-map-image {
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #8ccdeb;
+  box-shadow: var(--shadow-map);
+}
+
+.city-map-placeholder.has-map-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  border: 0;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.city-map-placeholder.has-map-image::after {
+  display: none;
+}
+
+.city-map-placeholder.has-map-image #city-map-text {
+  left: 28px;
+  top: 24px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1b6c9e;
+  font-size: 16px;
+  box-shadow: 0 8px 18px rgba(36, 87, 117, 0.14);
+}
+
+.city-map-placeholder.has-map-image .heritage-button {
+  background: #ff6f61;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 5px rgba(255, 111, 97, 0.22),
+    0 8px 20px rgba(36, 87, 117, 0.28);
+}
+
+.city-map-placeholder.has-map-image .heritage-button::after {
+  background: #ffffff;
+  color: #1b6c9e;
+}
+
+/* 문화재 마커 라벨 겹침 방지 */
+.heritage-button {
+  z-index: 10;
+}
+
+.heritage-button::after {
+  z-index: 999;
+}
+
+.heritage-button:hover,
+.heritage-button:focus-visible {
+  z-index: 9999;
+}
+
+.heritage-button:hover::after,
+.heritage-button:focus-visible::after {
+  z-index: 10000;
+}
+
+.popup-zoom-guide {
+  margin: 4px 0 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #edf8ff;
+  color: #1b6c9e;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.popup-content.image-mode .popup-zoom-guide {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .popup-zoom-guide {
+    border-radius: 14px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   BGM Player
+========================= */
+
+.bgm-player {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #9fd8f5;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 24px rgba(36, 87, 117, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.bgm-button,
+.bgm-next-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #edf8ff;
+  color: #1b6c9e;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.bgm-button:hover,
+.bgm-next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(36, 87, 117, 0.16);
+}
+
+.bgm-button.is-playing {
+  background: #1b8bd1;
+  color: #ffffff;
+}
+
+.bgm-title {
+  margin: 0;
+  padding: 0 8px 0 2px;
+  color: #5f7182;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .bgm-player {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    justify-content: center;
+    border-radius: 18px;
+    flex-wrap: wrap;
+  }
+
+  .bgm-button,
+  .bgm-next-button {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+
+  .bgm-title {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.hero-text span {
+  display: block;
+}
+
+.hero-text span + span {
+  margin-top: 8px;
+}
+
+.hero-text {
+  max-width: 980px;
+}
+
+.hero-text-line {
+  display: block;
+}
+
+.hero-text-line + .hero-text-line {
+  margin-top: 10px;
+}
+
+.hero-text-line-first {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero-text {
+    max-width: 680px;
+  }
+
+  .hero-text-line-first {
+    white-space: normal;
+  }
+}
+
+.hero-bgm-guide {
+  margin: 16px 0 0;
+  color: #3d7894;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.hero-bgm-guide::before {
+  content: "♪";
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #1b8bd1;
+  font-weight: 900;
+}
+
+/* =========================
+   Selected City CTA
+========================= */
+
+.city-card-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.city-card-cta-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fff8df;
+  color: #9b8132;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 6px 14px rgba(145, 111, 26, 0.1);
+}
+
+.city-card-button {
+  position: relative;
+  padding: 12px 22px;
+  border: 0;
+  background: linear-gradient(135deg, #1b8bd1 0%, #41b6e6 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(27, 139, 209, 0.24);
+}
+
+.city-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(27, 139, 209, 0.32);
+}
+
+.city-card-button::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 2px solid rgba(27, 139, 209, 0.22);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.city-card-button:hover::after,
+.city-card-button:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
